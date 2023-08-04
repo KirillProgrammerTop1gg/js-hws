@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Список домашніх завдань</title>
+    <title>Список домашніх задань</title>
     <!-- Підключення стилів Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
@@ -23,6 +23,11 @@
 
         header h1 {
             margin: 0;
+        }
+
+        /* Стилі для основного контента */
+        main {
+            margin-bottom: 80px; /* Отступ для футера */
         }
 
         /* Стилі для футера */
@@ -120,7 +125,7 @@
 <body>
     <!-- Хедер -->
     <header>
-        <h1>Список домашніх завдань</h1>
+        <h1>Список домашніх задань</h1>
     </header>
 
     <!-- Основний вміст -->
@@ -138,8 +143,6 @@
                 // Функція для відображення домашніх завдань на сторінці
                 function renderHomework(homeworkItems) {
                     const homeworkAccordion = document.getElementById("homeworkAccordion");
-
-                    homeworkAccordion.innerHTML = "";
 
                     homeworkItems.forEach((item, index) => {
                         const newHomeworkItem = document.createElement("div");
@@ -183,7 +186,9 @@
                 }
 
                 // Виклик функції для отримання домашніх завдань та їх відображення
-                getHomeworkFromServer().then(renderHomework);
+                getHomeworkFromServer().then((homeworkItems) => {
+                    renderHomework(homeworkItems);
+                });
             </script>
             <!-- Кінець скрипту -->
         </div>

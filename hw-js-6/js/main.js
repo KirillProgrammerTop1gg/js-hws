@@ -1,12 +1,25 @@
+// Завдання 1 (JS)
 const input = document.querySelector(".form__input");
 const but = document.querySelector(".form__but");
 
-but.addEventListener('click', () => { but.innerHTML = input.value; });
+function writeBut (){
+    but.innerHTML = input.value;
+}
 
-document.querySelector(".img").src = './img/cat2.jpg';
+but.addEventListener('click', writeBut);
 
-document.querySelector(".link").href = 'https://www.youtube.com/';
-document.querySelector(".link").target = '_blank';
-document.querySelector(".imgAlt").alt = 'Doge';
+// Завдання 2 (JS)
+const imgTask2 = document.querySelector(".img");
+imgTask2.src = './img/cat2.jpg';
 
-document.querySelectorAll(".item")[0].innerHTML = 'Not a text, AHHAHAHAHHAHAH';
+// Завдання 3 (JS)
+const linkElement = document.querySelector(".link");
+linkElement.href = 'https://www.youtube.com/';
+linkElement.target = '_blank';
+
+const imgTask3 = document.querySelector(".imgAlt");
+imgTask3.alt = 'Doge';
+
+// Завдання 4 (JS)
+const firstItemElement = document.querySelector("list").firstElementChild;
+firstItemElement.textContent = 'Not a text, AHHAHAHAHHAHAH';
