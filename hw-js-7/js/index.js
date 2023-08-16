@@ -30,7 +30,7 @@ nameInput.addEventListener('input', () => {
 const validationInput = document.querySelector('#validation-input');
 validationInput.addEventListener('blur', () => {
     console.log(validationInput.value.length);
-    if(validationInput.value.length == 6){
+    if(validationInput.value.length == validationInput.getAttribute("data-length")){
         validationInput.classList.add('valid');
         validationInput.classList.remove('invalid');
     }
