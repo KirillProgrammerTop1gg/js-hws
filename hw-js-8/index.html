@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hw-js-8</title>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    <!-- task 1 -->
+    <input type="text" id="input-text-1" placeholder="input text 1">
+    <input type="text" id="input-text-2" placeholder="input text 2">
+    <button id="button-check-text-inputs">Check two text inputs</button>
+    <br><br><br><br>
+
+    <!-- task 2 -->
+    <input type="number" id="input-number-1" placeholder="input number 1">
+    <input type="number" id="input-number-2" placeholder="input number 2">
+    <button id="button-check-number-inputs">Check two number inputs</button>
+    <br><br><br><br>
+
+    <!-- task 3 -->
+    <input type="text" id="input-text" placeholder="input text">
+    <button id="button-check-text-input">Check text</button>
+    <br><br><br><br>
+
+    <!-- task 4 -->
+    <form class="form">
+        <input type="number" class="form__input" placeholder="number">
+        <button class="form__button" type="submit">Check num input</button>
+    </form>
+    <br><br><br><br>
+
+    <!-- task 5 -->
+    <form class="contactForm">
+        <input type="text" class="contactForm__input" data-input-name placeholder="Name (more or equal 3 symbols)">
+        <input type="email" class="contactForm__input" data-input-email placeholder="Email (includes @ and .)">
+        <input type="password" class="contactForm__input" data-input-password placeholder="Password (more or equal 6 symbols)">
+        <button class="contactForm__button" type="submit" data-button-send>Send</button>
+    </form>
+
+    <!-- custom modal -->
+    <div class="backdrop">
+        <div class="modal">
+            <h2 class="modal__title"></h2>
+            <p class="modal__text"></p>
+            <button class="modal__close" type="button">Close</button>
+        </div>
+    </div>
+
+    <script type="module" src="./js/main.js"></script>
+</body>
+</html>
