@@ -125,3 +125,43 @@ switch (yearMonth) {
     default:
         alert("Неправильний номер місяця");
 }
+
+// task 6
+
+const color = prompt("Колір світлофора?").toLowerCase();
+
+switch (color) {
+    case "червоний":
+        alert("стоп");
+        break;
+    case "зелений":
+        alert("йти");
+        break;
+    case "жовтий":
+        alert("чекати");
+        break;
+    default:
+        alert("не тот колір");
+}
+
+// task 7
+const num1 = Number(prompt("Число 1?"));
+const num2 = Number(prompt("Число 2?"));
+const action = prompt("Дія?");
+
+switch (action) {
+    case '+':
+        alert(`Сума: ${num1 + num2}`);
+        break;
+    case '-':
+        alert(`Різниця: ${num1 - num2}`);
+        break;
+    case '/':
+        alert(`Частка: ${num1 / num2}`);
+        break;
+    case '*':
+        alert(`Добуток: ${num1 * num2}`);
+        break;
+    default:
+        console.log("Не правильна дія");
+}
