@@ -63,7 +63,7 @@ console.log("task 6");
 
 const n = 27;
 
-for (let i = 0; ; i++){
+for (let i = 0; i <= n; i++){
     console.log(i);
     if (n <= i) {
         break;
