@@ -15,7 +15,7 @@ checkBut.addEventListener("click", () => {
     if (checkGuess()) {
         guessResult.innerHTML = `Перемога, ви вгадали число! Ви вгадали за ${attempt} попиток`;
         attempt = 0;
-        randNum = Math.round(Math.random() * (100 - 1) + 1);
+        randNum = Math.round(Math.random() * (100 - 0) + 0);
     }
     else {
         guessResult.innerHTML = Number(guessField.value) > randNum ? `Число не вірне, ваше число більше ніж треба. Спробуйте ще!` : `Число не вірне, ваше число менше ніж треба. Спробуйте ще!`;
@@ -32,10 +32,7 @@ page.addEventListener("click", () => {
 });
 
 // task 4
-const applyCallbackToEachElement = (arr, callback) => {
-    arr.forEach(num => arr.push(callback(num)));
-    return arr;
-}
+const applyCallbackToEachElement = (arr, callback) => arr.map(callback);
 
 const arr = [1, 2, 3, 4, 5];
 const squareCallback = (num) => num**2;
