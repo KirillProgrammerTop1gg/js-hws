@@ -79,7 +79,10 @@ const alexFriends = users.reduce((acct, user) => {
     return acct;
 }, []);
 const usersSort = [...users].sort((currentFriendsCount, nextFriendsCount) => currentFriendsCount.friendsCount - nextFriendsCount.friendsCount).map((users) => users.name);
-const allSkills = users.map(user => user.skills).filter((skill, index, skillsArray) => skillsArray.indexOf(skill) === index).sort();
+const allSkills = users.reduce((acct, user) => {
+    acct.indexOf(user.skills) === -1 ? acct.push(user.skills) : null;
+    return acct;
+}, []).sort();
 
 console.log(totalBalances);
 console.log(alexFriends);
