@@ -1,0 +1,37 @@
+*{
+    list-style: none;
+}
+/* 1-task */
+img {
+    height: 200px;
+    background-color: #f0f0f0;
+    opacity: 0;
+    position: absolute;
+    transform: translate(-100px);
+    transition: all 0.5s;
+}
+
+img.load{
+    opacity: 1;
+    transform: translate(0);
+    position: static;
+    background-color: transparent;
+}
+/* 2-task */
+.listD{
+    width: 90%;
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.imgD{
+    position: static;
+    transform: translate(0);
+    opacity: 1;
+    width: 200px;
+    transition: all 0.4s;
+}
+.imgD.load{
+    opacity: 0;
+}
