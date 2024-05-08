@@ -1,0 +1,14 @@
+{
+  "name": "hw-js-24",
+  "version": "0.9.5",
+  "description": "Test test",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server -p 8080"
+  },
+  "author": "Gorbunov Kirill",
+  "license": "ISC",
+  "dependencies": {
+    "http-server": "^14.1.1"
+  }
+}
