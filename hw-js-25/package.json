@@ -1,0 +1,22 @@
+{
+  "name": "hw-js-25",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html"
+  },
+  "keywords": [],
+  "author": "GK",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.12.0"
+  },
+  "dependencies": {
+    "chart.js": "^4.4.2",
+    "pnotify": "^5.2.0",
+    "@pnotify/core": "*",
+    "@pnotify/mobile": "*"
+  }
+}
