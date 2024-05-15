@@ -1,0 +1,2 @@
+var u={name:"",email:"",msg:""};const e=document.querySelector("#input_name"),n=document.querySelector("#input_email"),t=document.querySelector("#input_msg"),m=document.querySelector("#but_send"),r=document.querySelector("#info");m.addEventListener("click",m=>{m.preventDefault(),u.name=e.value,u.email=n.value,u.msg=t.value,r.innerHTML=`\u{424}\u{43E}\u{440}\u{43C}\u{430} \u{443}\u{441}\u{43F}\u{456}\u{448}\u{43D}\u{43E} \u{432}\u{456}\u{434}\u{43F}\u{440}\u{430}\u{432}\u{43B}\u{435}\u{43D}\u{43D}\u{430}!`});
+//# sourceMappingURL=index.cd43907f.js.map
