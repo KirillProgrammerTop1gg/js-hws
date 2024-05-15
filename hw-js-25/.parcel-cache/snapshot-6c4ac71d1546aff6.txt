@@ -7,7 +7,7 @@
 101C:\ProgRammer\html\js-hws\hw-js-25\node_modules\caniuse-lite\data\features\comparedocumentposition.js133602396061140457 0
 87C:\ProgRammer\html\js-hws\hw-js-25\node_modules\@parcel\transformer-babel\src\config.js133602396051242547 0
 83C:\ProgRammer\html\js-hws\hw-js-25\node_modules\type-fest\source\readonly-deep.d.ts133602396055004398 0
-47C:\ProgRammer\html\js-hws\hw-js-25\package.json133602520242495655 0
+47C:\ProgRammer\html\js-hws\hw-js-25\package.json133602624363508099 0
 79C:\ProgRammer\html\js-hws\hw-js-25\node_modules\source-map\lib\binary-search.js133602396050709569 0
 92C:\ProgRammer\html\js-hws\hw-js-25\node_modules\@fortawesome\free-solid-svg-icons\faBible.js133602409894409636 0
 88C:\ProgRammer\html\js-hws\hw-js-25\node_modules\csso\node_modules\css-tree\lib\generator133602396064940193 1
