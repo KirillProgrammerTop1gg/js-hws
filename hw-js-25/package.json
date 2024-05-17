@@ -2,16 +2,22 @@
   "name": "hw-js-25",
   "version": "1.0.0",
   "description": "",
+  "homepage": "https://kirillprogrammertop1gg.github.io/js-hws/",
   "scripts": {
     "start": "parcel src/index.html",
-    "build": "parcel build src/index.html"
+    "build": "parcel build src/index.html",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [],
   "author": "GK",
   "license": "ISC",
   "devDependencies": {
-    "parcel": "^2.12.0",
+    "parcel": "^2.12.0"
+  },
+  "dependencies": {
     "chart.js": "^4.4.2",
+    "gh-pages": "^6.1.1",
     "pnotify": "^5.2.0"
   }
 }
