@@ -1,0 +1,36 @@
+*{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.users{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    justify-content: center;
+    gap: 25px;
+    padding: 15px;
+}
+.users__user{
+    width: 320px;
+    background-color: rgba(157,74,224,0.6);
+    padding: 25px;
+    border-radius: 15px;
+    transition: all 0.3s;
+}
+.users__user:hover{
+    background-color: rgba(157, 74, 224, 1);
+}
+.users__name{
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+.users__email{
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+.users__age{
+    margin-bottom: 5px;
+    font-size: 18px;
+}

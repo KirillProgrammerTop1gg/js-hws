@@ -1,0 +1,21 @@
+{
+  "name": "hw-js-27",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html"
+  },
+  "keywords": [],
+  "author": "GK",
+  "license": "ISC",
+  "dependencies": {
+    "handlebars": "^4.7.8",
+    "parcel-bundler": "^1.12.5",
+    "parcel-plugin-handlebars-precompile": "^1.0.2",
+    "parcel-transformer-hbs": "^1.0.4"
+  },
+  "devDependencies": {
+    "parcel": "^2.12.0"
+  }
+}

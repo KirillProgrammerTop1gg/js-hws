@@ -1,0 +1,2 @@
+*{box-sizing:border-box;margin:0;padding:0;list-style:none}.users{flex-wrap:wrap;justify-content:center;gap:25px;margin:0 auto;padding:15px;display:flex}.users__user{background-color:#9d4ae099;border-radius:15px;width:320px;padding:25px;transition:all .3s}.users__user:hover{background-color:#9d4ae0}.users__name{margin-bottom:5px;font-size:22px}.users__email{margin-bottom:5px;font-size:16px}.users__age{margin-bottom:5px;font-size:18px}
+/*# sourceMappingURL=index.4eea864e.css.map */
