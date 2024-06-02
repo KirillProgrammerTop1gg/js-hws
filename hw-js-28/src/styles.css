@@ -1,0 +1,137 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+body{
+    margin: 0 20px;
+}
+.students {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: left;
+}
+.students th, .students td {
+    border: 1px solid black;
+    padding: 8px;
+}
+.students__student {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+.students__student button{
+    background-color: transparent;
+    border: 0;
+}
+
+.addStudent{
+    padding: 25px;
+    border: 1px solid #2C2C2C;
+    width: 400px;
+    border-radius: 25px;
+}
+
+.addStudent__form {
+    display: flex;
+    flex-direction: column;
+}
+
+.addStudent__title,
+.modal__title{
+    text-align: center;
+    width: 90%;
+    margin: 0 auto 10px;
+    color: #2C2C2C;
+}
+
+.addStudent__form input,
+.addStudent__form button,
+.modal__form input,
+.modal__form button {
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.addStudent__submit,
+.modal__submit {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+}
+
+.addStudent__submit:hover {
+    background-color: #45a049;
+}
+
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.invalid-input {
+    border-color: red;
+}
+
+.backdrop {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background: rgba(94, 99, 99, 0.7);
+    z-index: 1000;
+}
+
+.backdrop.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal {
+    background-color: #FFF;
+    width: 320px;
+    position: absolute;
+    padding: 10px;
+    top: 50%;
+    left: 50%;
+    z-index: 1001;
+    transform: translate(-50%, -50%);
+    border-radius: 30px;
+}
+
+.modal__button {
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    background-color: #FEFEFE;
+    width: 32px;
+    height: 32px;
+    border-radius: 30px;
+    font-size: 20px;
+    text-align: center;
+    vertical-align: middle;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.06);
+    top: 10px;
+    right: 10px;
+}
+
+.modal__svg {
+    width: 17px;
+    height: 17px;
+    padding-top: 4px;
+}
+
+.modal__name {
+    padding-top: 20px;
+    padding-bottom: 2px;
+    padding-left: 12px;
+}
