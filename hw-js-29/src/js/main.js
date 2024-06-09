@@ -126,11 +126,12 @@ document.querySelector('.contacts').addEventListener('click', (e) => {
 document.querySelector('.editContact__saveBut').addEventListener('click', (e) => {
     e.preventDefault();
     if (e.target.hasAttribute('data-id')) {
+        console.log(e.target.dataset.id)
         contacts[e.target.dataset.id] = {
-            "name": document.querySelector('.addContact input[placeholder="Name"]').value !== '' ? document.querySelector('.addContact input[placeholder="Name"]').value : contacts[e.target.dataset.id].name,
-            "surname": document.querySelector('.addContact input[placeholder="Surname"]').value !== '' ? document.querySelector('.addContact input[placeholder="Surname"]').value : contacts[e.target.dataset.id].surname,
-            "phone": document.querySelector('.addContact input[placeholder="Telephone"]').value !== '' ? document.querySelector('.addContact input[placeholder="Telephone"]').value : contacts[e.target.dataset.id].phone,
-            "email": document.querySelector('.addContact input[placeholder="Email"]').value !== '' ? document.querySelector('.addContact input[placeholder="Email"]').value : contacts[e.target.dataset.id].email,
+            "name": document.querySelector('.editContact input[placeholder="Name"]').value !== '' ? document.querySelector('.editContact input[placeholder="Name"]').value : contacts[e.target.dataset.id].name,
+            "surname": document.querySelector('.editContact input[placeholder="Surname"]').value !== '' ? document.querySelector('.editContact input[placeholder="Surname"]').value : contacts[e.target.dataset.id].surname,
+            "phone": document.querySelector('.editContact input[placeholder="Telephone"]').value !== '' ? document.querySelector('.editContact input[placeholder="Telephone"]').value : contacts[e.target.dataset.id].phone,
+            "email": document.querySelector('.editContact input[placeholder="Email"]').value !== '' ? document.querySelector('.editContact input[placeholder="Email"]').value : contacts[e.target.dataset.id].email,
         };
         showContacts();
         localStorage.setItem('contacts', JSON.stringify(contacts));
