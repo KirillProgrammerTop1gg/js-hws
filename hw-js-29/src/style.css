@@ -1,0 +1,16 @@
+.todoList{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+.todoList__item{
+    display: flex;
+    width: 150px;
+    border-radius: 15px;
+    background-color: burlywood;
+    justify-content: center;
+    transition: all 0.3s;
+}
+.flagtrue{
+    background-color: gray;
+}

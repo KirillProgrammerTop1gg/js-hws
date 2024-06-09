@@ -1,0 +1,19 @@
+.todoList {
+  flex-wrap: wrap;
+  gap: 25px;
+  display: flex;
+}
+
+.todoList__item {
+  background-color: #deb887;
+  border-radius: 15px;
+  justify-content: center;
+  width: 150px;
+  transition: all .3s;
+  display: flex;
+}
+
+.flagtrue {
+  background-color: gray;
+}
+/*# sourceMappingURL=index.2cdaf7bc.css.map */
