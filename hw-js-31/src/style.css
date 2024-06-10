@@ -1,0 +1,15 @@
+.box{
+    opacity: 0;
+    background-color: aquamarine;
+    width: 150px;
+    height: 150px;
+    transition: all 3s;
+    border-radius: 30px;
+    transform: translate(500%, 300%);
+    margin-bottom: 25px;
+}
+
+.box.is-active{
+    opacity: 1;
+    transform: translate(0, 0);
+}

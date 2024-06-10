@@ -42,6 +42,7 @@ document.querySelector('.saveForm__saveBut').addEventListener('click', () => {
 
 document.querySelector('.saveForm__regBut').addEventListener('click', (e) => {
     e.preventDefault();
+    inputs.forEach(input => input.value = '');
     userLogins.includes(document.querySelector('.saveForm input[placeholder="Login"]').value.toLowerCase()) ? document.querySelector('.info').innerHTML = 'Такий юзер вже існує' : (document.querySelector('.info').innerHTML = 'Ви зареєстровані!', userLogins.push(document.querySelector('.saveForm input[placeholder="Login"]').value.toLowerCase()));
     localStorage.setItem('userLogins', JSON.stringify(userLogins))
     localStorage.removeItem('dataForm');
