@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hw-js-35</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script type="module" src="./index.js"></script>
+</head>
+<body>
+    <ul class="movies"></ul>
+    <form class="addMovies">
+        <input type="text" placeholder="Movie title" class="addMovies__title" required>
+        <input type="number" placeholder="Movie year" class="addMovies__year" required>
+        <input type="text" placeholder="Movie director" class="addMovies__director" required>
+        <input type="text" placeholder="Movie genre" class="addMovies__genre" required>
+        <button type="submit" class="addMovies__button">Add movie</button>
+    </form>
+    <div class="backdrop is-hidden" data-overlay-updateMovie>
+        <section class="updateMovies">
+            <div class="updateMovies__top">
+                <h1 class="updateMovies__title">Update movie</h1>
+                <button class="updateMovies__close" data-close-updateMovie>
+                    x
+                </button>
+            </div>
+            <form class="updateMovies__form">
+                <input type="number" placeholder="Movie title" class="updateMovies__titl" required>
+                <input type="number" placeholder="Movie year" class="updateMovies__year" required>
+                <input type="text" placeholder="Movie director" class="updateMovies__director" required>
+                <input type="text" placeholder="Movie genre" class="updateMovies__genre" required>
+                <button type="submit" class="updateMovies__button">Оновити</button>
+            </form>
+        </section>
+    </div>
+    <div class="backdrop is-hidden" data-overlay-editMovie>
+        <section class="editMovies">
+            <div class="editMovies__top">
+                <h1 class="editMovies__title">Edit movie</h1>
+                <button class="editMovies__close" data-close-editMovie>
+                    x
+                </button>
+            </div>
+            <form class="editMovies__form">
+                <input type="number" placeholder="Movie title" class="editMovies__titl">
+                <input type="number" placeholder="Movie year" class="editMovies__year">
+                <input type="text" placeholder="Movie director" class="editMovies__director">
+                <input type="text" placeholder="Movie genre" class="editMovies__genre">
+                <button type="submit" class="editMovies__button">Редагувати</button>
+            </form>
+        </section>
+    </div>
+</body>
+</html>

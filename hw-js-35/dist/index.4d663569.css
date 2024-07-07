@@ -1,0 +1,42 @@
+.backdrop {
+  z-index: 1000;
+  background: #5e6363b3;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.updateMovies, .editMovies {
+  z-index: 1001;
+  background-color: #fff;
+  border-radius: 30px;
+  width: 320px;
+  padding: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.updateMovies__close, .editMovies__close {
+  text-align: center;
+  vertical-align: middle;
+  background-color: #fefefe;
+  border: none;
+  border-radius: 30px;
+  width: 32px;
+  height: 32px;
+  font-size: 20px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  box-shadow: 0 4px 4px #0000000f;
+}
+/*# sourceMappingURL=index.4d663569.css.map */
