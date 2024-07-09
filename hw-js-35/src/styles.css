@@ -22,8 +22,11 @@ button{
     margin-top: 15px;
     display: flex;
     flex-wrap: wrap;
-    margin: 15px auto 0;
+    margin-top: 15px;
+    width: 100%;
     gap: 25px;
+    justify-content: center;
+    align-items: center;
 }
 
 .movies__item{
@@ -67,6 +70,55 @@ button{
     background-color: #48d965;
 }
 
+.addMovies{
+    margin: 15px auto 0;
+    width: min-content;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input[addMovie], .addMovies__button{
+    border-radius: 10px;
+    border: 2px solid gray;
+    font-size: 27px;
+    background-color: #8df0a8;
+    padding: 10px;
+}
+
+.addMovies__button{
+    background-color: #32a852;
+}
+
+input{
+    display: block;
+}
+
+.updateMovies__title, .editMovies__title{
+    text-align: center;
+}
+
+input[updateMovie], input[editMovie], .updateMovies__button, .editMovies__button{
+    border: 2px solid gray;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 25px;
+    background-color: #8df0a8;
+}
+
+.updateMovies__button,
+.editMovies__button {
+    background-color: #32a852;
+}
+
+.editMovies__form, .updateMovies__form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
 .backdrop {
     position: fixed;
     width: 100%;
@@ -75,6 +127,7 @@ button{
     right: 0;
     background: rgba(94, 99, 99, 0.7);
     z-index: 1000;
+    transition: all 0.3s;
 }
 
 .backdrop.is-hidden {
@@ -84,7 +137,7 @@ button{
 
 .updateMovies, .editMovies {
     background-color: #FFF;
-    width: 320px;
+    width: 340px;
     position: absolute;
     padding: 10px;
     top: 50%;
@@ -108,5 +161,11 @@ button{
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.06);
     top: 10px;
     right: 10px;
+    transition: all .3s;
 }
 
+.updateMovies__close:hover,
+.editMovies__close:hover {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
+    background-color: #7a7d7b;
+}

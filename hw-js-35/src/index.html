@@ -14,10 +14,10 @@
     <h1 class="title">Films site</h1>
     <ul class="movies"></ul>
     <form class="addMovies">
-        <input type="text" placeholder="Movie title" class="addMovies__title" required>
-        <input type="number" placeholder="Movie year" class="addMovies__year" required>
-        <input type="text" placeholder="Movie director" class="addMovies__director" required>
-        <input type="text" placeholder="Movie genre" class="addMovies__genre" required>
+        <input type="text" placeholder="Movie title" class="addMovies__title" required addMovie>
+        <input type="number" placeholder="Movie year" class="addMovies__year" required addMovie>
+        <input type="text" placeholder="Movie director" class="addMovies__director" required addMovie>
+        <input type="text" placeholder="Movie genre" class="addMovies__genre" required addMovie>
         <button type="submit" class="addMovies__button">Add movie</button>
     </form>
     <div class="backdrop is-hidden" data-overlay-updateMovie>
@@ -29,11 +29,11 @@
                 </button>
             </div>
             <form class="updateMovies__form">
-                <input type="number" placeholder="Movie title" class="updateMovies__titl" required>
-                <input type="number" placeholder="Movie year" class="updateMovies__year" required>
-                <input type="text" placeholder="Movie director" class="updateMovies__director" required>
-                <input type="text" placeholder="Movie genre" class="updateMovies__genre" required>
-                <button type="submit" class="updateMovies__button">Оновити</button>
+                <input type="text" placeholder="Movie title" class="updateMovies__titl" required updateMovie>
+                <input type="number" placeholder="Movie year" class="updateMovies__year" required updateMovie>
+                <input type="text" placeholder="Movie director" class="updateMovies__director" required updateMovie>
+                <input type="text" placeholder="Movie genre" class="updateMovies__genre" required updateMovie>
+                <button type="submit" class="updateMovies__button">Update</button>
             </form>
         </section>
     </div>
@@ -46,11 +46,11 @@
                 </button>
             </div>
             <form class="editMovies__form">
-                <input type="number" placeholder="Movie title" class="editMovies__titl">
-                <input type="number" placeholder="Movie year" class="editMovies__year">
-                <input type="text" placeholder="Movie director" class="editMovies__director">
-                <input type="text" placeholder="Movie genre" class="editMovies__genre">
-                <button type="submit" class="editMovies__button">Редагувати</button>
+                <input type="text" placeholder="Movie title" class="editMovies__titl" editMovie>
+                <input type="number" placeholder="Movie year" class="editMovies__year" editMovie>
+                <input type="text" placeholder="Movie director" class="editMovies__director" editMovie>
+                <input type="text" placeholder="Movie genre" class="editMovies__genre" editMovie>
+                <button type="submit" class="editMovies__button">Edit</button>
             </form>
         </section>
     </div>
