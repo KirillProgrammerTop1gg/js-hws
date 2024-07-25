@@ -183,5 +183,10 @@
     "title": "Домашнє завдання 36",
     "date": "2024-07-10",
     "link": "./hw-js-36/dist/index.html"
+  },
+  {
+    "title": "Домашнє завдання 37",
+    "date": "2024-07-25",
+    "link": "./hw-js-37/build/index.html"
   }
 ]
