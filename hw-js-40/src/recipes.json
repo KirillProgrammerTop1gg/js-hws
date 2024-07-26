@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "Caesar witchicken",
+    "img": "https://www.eatingwell.com/thmb/B__qVvHt8vlDMMuwZ662ZF2Jmqo=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Chicken-Caesar-Salad-1x1-230-95039018d78c40e48af4b61d18eb20d4.jpg",
+    "cookingTime": "30",
+    "calories": 350,
+    "difficulty": 1,
+    "servings": 2
+  },
+  {
+    "id": 2,
+    "name": "Spaghetti Carbonara",
+    "img": "https://static01.nyt.com/images/2021/02/14/dining/carbonara-horizontal/carbonara-horizontal-square640-v2.jpg",
+    "cookingTime": "20",
+    "calories": 500,
+    "difficulty": 0,
+    "servings": 4
+  },
+  {
+    "id": 3,
+    "name": "Pizza Margherita",
+    "img": "https://www.1-food.com/media/62/59/96/1687420957/Pizza-Margherita.jpg",
+    "cookingTime": "45",
+    "calories": 700,
+    "difficulty": 3,
+    "servings": 4
+  },
+  {
+    "id": 4,
+    "name": "Chicken soup",
+    "img": "https://www.allrecipes.com/thmb/pTGS0SZsSQK85sV_RQE_K6ZfoN4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/26460-quick-and-easy-chicken-noodle-soup-allrecipes-1x1-1-b88125437574471db3e114c40bc6928e.jpg",
+    "cookingTime": "60",
+    "calories": 250,
+    "difficulty": 1,
+    "servings": 6
+  }
+]
