@@ -1,0 +1,58 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.taskList__title {
+    color: #348ceb;
+    font-size: 42px;
+    margin: 20px auto 20px;
+}
+
+.taskList__list {
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    list-style: none;
+    gap: 10px;
+}
+
+.taskList__item {
+    margin-bottom: 10px;
+    display: flex;
+    border: 2px solid #8f34eb;
+    gap: 20px;
+    width: max-content;
+    padding: 5px;
+}
+
+.taskList__text {
+    font-size: 18px;
+}
+
+.taskList__del {
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.taskList__input {
+    padding: 10px;
+    margin-right: 10px;
+    width: 250px;
+    border: 3px solid #eb8934;
+    height: 50px;
+    font-size: 18px;
+}
+
+.taskList__add {
+    padding: 10px;
+    background-color: #e3501b;
+    color: white;
+    border: none;
+    height: 50px;
+    font-size: 18px;
+}
