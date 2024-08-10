@@ -30,7 +30,7 @@ class TaskList extends Component{
                 )}
             </ul>
             <form className="taskList__form">
-                <input type="input" className="taskList__input" placeholder="Task text"/>
+                <input type="input" className="taskList__input" placeholder="Task text" required/>
                 <button type="submit" onClick={(e) => this.addTask(e)} className="taskList__add">Add new task</button>
             </form>
         </>
