@@ -213,5 +213,10 @@
     "title": "Домашнє завдання 42",
     "date": "2024-08-13",
     "link": "./hw-js-42/build/index.html"
+  },
+  {
+    "title": "Домашнє завдання 43",
+    "date": "2024-08-27",
+    "link": "./hw-js-43/build/index.html"
   }
 ]
