@@ -1,0 +1,9 @@
+.gallery-loadmore{
+    display: flex;
+    margin: 80px auto 10px;
+    padding: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
