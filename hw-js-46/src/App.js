@@ -14,12 +14,12 @@ export default class App extends Component {
     images: [],
     isLoading: false,
     isModal: false,
-    largeImageURL: '',
+    modalId: '',
     isButton: true,
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (this.state.page !== 1) window.scrollTo({top: document.documentElement.scrollHeight, behavior: 'smooth'});
+    if (this.state.page !== 1 && this.state.images.length !== prevState.images.length) window.scrollTo({top: document.documentElement.scrollHeight, behavior: 'smooth'});
     if (prevState.search !== this.state.search || prevState.page !== this.state.page) this.fetchImages();
   }
 
@@ -33,16 +33,22 @@ export default class App extends Component {
     }
   }
 
+  handleKeyDown = (event) => {
+    if(event.key === 'Escape') this.setState({ modalId: 0, isModal: false })
+    if(event.key === 'ArrowLeft') this.setState({ modalId: this.state.modalId > 0 ? this.state.modalId - 1 : this.state.images.length - 1 });
+    if(event.key === 'ArrowRight') this.setState({ modalId: this.state.modalId < this.state.images.length - 1 ? this.state.modalId + 1 : 0 });
+  };
+
   render() {
     return (
       <div className="App">
         <Searchbar func={(inpVal) => this.setState({ search: inpVal, page: 1 })} />
         {this.state.isLoading ? <Loader /> : <>
-          {this.state.images.length !== 0 && <ImageGallery images={this.state.images} openModal={(largeImage) => this.setState({ largeImageURL: largeImage, isModal: true })} />}
+          {this.state.images.length !== 0 && <ImageGallery images={this.state.images} openModal={(id) => (this.setState({ modalId: this.state.images.indexOf(this.state.images.find(image => image.id === id)), isModal: true }),window.addEventListener('keydown', this.handleKeyDown))} />}
           {this.state.images.length !== 0 && this.state.isButton && <Button loadMore={() => this.setState(prevState => ({ page: prevState.page + 1 }))} />}
         </>}
         {this.state.images.length === 0 && <Notification />}
-        {this.state.isModal && <Modal img={this.state.largeImageURL} closeFunc={() => this.setState({ isModal: false })} />}
+        {this.state.isModal && <Modal img={this.state.images[this.state.modalId].largeImageURL} closeFunc={() => (this.setState({ isModal: false }), window.removeEventListener('keydown', this.handleKeyDown))} />}
       </div>
     );
   }
