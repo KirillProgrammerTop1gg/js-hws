@@ -20,7 +20,7 @@ const Movies = styled.ul`
     }
 `;
 
-export default function MovieSearch() {
+export default () => {
     const [films, setFilms] = useState([]);
     const [searchParams, setSearchParams] = useSearchParams();
     const query = searchParams.get('query') || '';
