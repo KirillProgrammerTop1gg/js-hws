@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { useSelector, useDispatch } from "react-redux";
+import { setFilter } from "../../redux/filter/action";
 
 const Label = styled.h3`
     font-weight: 400;
@@ -20,7 +21,7 @@ export default () =>
             <Label>
                 Find contacts by name
             </Label>
-            <Input type="text" onInput={(e) => dispatch({type: "setFilter", payload: e.target.value})}/>
+            <Input type="text" onInput={(e) => dispatch(setFilter(e.target.value))}/>
         </>
     );
 }

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { useSelector, useDispatch } from 'react-redux';
+import { delContact } from "../../redux/contacts/action";
 
 const Contacts = styled.ul`
     padding-left: 60px;
@@ -38,7 +39,7 @@ export default () => {
         <Contacts>
             {(filter.trim().toLowerCase() !== '' ? contacts.filter(contact => contact.name.toLowerCase().includes(filter.trim().toLowerCase())) : contacts).map(contact => <Contact key={contact.id}>
                 <ContactInfo>{contact.name}: {contact.number}</ContactInfo>
-                <DelBut onClick={(e) => dispatch({type: 'delContact', payload: contact.id})}>Delete</DelBut>
+                <DelBut onClick={(e) => dispatch(delContact(contact.id))}>Delete</DelBut>
             </Contact>)}
         </Contacts>
     );

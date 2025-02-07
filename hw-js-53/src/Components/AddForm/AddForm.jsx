@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { addContact } from "../../redux/contacts/action";
 import { useSelector, useDispatch } from "react-redux";
 
 const Form = styled.form`
@@ -27,7 +28,7 @@ const AddForm = styled.button`
 export default () => {
     const dispatch = useDispatch();
     return (
-        <Form onSubmit={(e) => (e.preventDefault(), dispatch({type: 'addContact', payload: {name: e.target.name.value, number: e.target.number.value}}))}>
+        <Form onSubmit={(e) => (e.preventDefault(), dispatch(addContact({name: e.target.name.value, number: e.target.number.value})))}>
             <Label>Name</Label>
             <Input
                 type="text"
