@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useSelector, useDispatch } from 'react-redux';
-import { delContact } from "../../redux/contacts/action";
+import { delContact } from "../../redux/contactsSlice";
+import { setFilter } from "../../redux/filterSlice";
 
 const Contacts = styled.ul`
     padding-left: 60px;
@@ -32,8 +33,8 @@ const DelBut = styled.button`
 `;
 
 export default () => {
-    const contacts = useSelector((state) => state.contacts);
-    const filter = useSelector((state) => state.filter);
+    const contacts = useSelector((state) => state.contacts.contactsList);
+    const filter = useSelector((state) => state.filter.status);
     const dispatch = useDispatch();
     return (
         <Contacts>

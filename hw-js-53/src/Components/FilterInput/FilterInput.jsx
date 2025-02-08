@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { useSelector, useDispatch } from "react-redux";
-import { setFilter } from "../../redux/filter/action";
+import { setFilter } from "../../redux/filterSlice";
 
 const Label = styled.h3`
     font-weight: 400;
@@ -16,12 +16,13 @@ const Input = styled.input`
 export default () => 
 {
     const dispatch = useDispatch();
+    const filter = useSelector((state) => state.filter.status);
     return (
         <>
             <Label>
                 Find contacts by name
             </Label>
-            <Input type="text" onInput={(e) => dispatch(setFilter(e.target.value))}/>
+            <Input type="text" value={filter !== '' ? filter : ''} onInput={(e) => dispatch(setFilter(e.target.value))}/>
         </>
     );
 }
