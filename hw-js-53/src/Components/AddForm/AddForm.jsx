@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { addContact } from "../../redux/contactsSlice";
+import { addContact } from "../../redux/contactsApi";
 import { useSelector, useDispatch } from "react-redux";
 
 const Form = styled.form`

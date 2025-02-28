@@ -10,14 +10,19 @@ const persistConfig = {
     storage,
 }
 
-const persistContactsReducer = persistReducer(persistConfig, contactsReducer);
 const persistFilterReducer = persistReducer(persistConfig, filterReducer);
 
 export const store = configureStore({
     reducer: {
-        contacts: persistContactsReducer,
+        contacts: contactsReducer,
         filter: persistFilterReducer,
     },
+    middleware: (getDefaultMiddleware) =>
+        getDefaultMiddleware({
+            serializableCheck: {
+                ignoredActions: ['persist/PERSIST'],
+            },
+        }),
     devTools: composeWithDevTools(),
 });
 

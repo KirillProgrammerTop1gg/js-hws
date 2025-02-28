@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useSelector, useDispatch } from 'react-redux';
-import { delContact } from "../../redux/contactsSlice";
-import { setFilter } from "../../redux/filterSlice";
+import { useEffect } from "react";
+import { fetchContacts, delContact } from "../../redux/contactsApi";
 
 const Contacts = styled.ul`
     padding-left: 60px;
@@ -36,6 +36,9 @@ export default () => {
     const contacts = useSelector((state) => state.contacts.contactsList);
     const filter = useSelector((state) => state.filter.status);
     const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(fetchContacts())
+    }, []);
     return (
         <Contacts>
             {(filter.trim().toLowerCase() !== '' ? contacts.filter(contact => contact.name.toLowerCase().includes(filter.trim().toLowerCase())) : contacts).map(contact => <Contact key={contact.id}>
