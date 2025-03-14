@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useSelector, useDispatch } from "react-redux";
 import { setFilter } from "../../redux/filterSlice";
+import { selectFilter } from "../../redux/selectors";
 
 const Label = styled.h3`
     font-weight: 400;
@@ -16,7 +17,7 @@ const Input = styled.input`
 export default () => 
 {
     const dispatch = useDispatch();
-    const filter = useSelector((state) => state.filter.status);
+    const filter = useSelector(selectFilter);
     return (
         <>
             <Label>

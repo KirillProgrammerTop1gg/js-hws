@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from "react";
 import { fetchContacts, delContact } from "../../redux/contactsApi";
+import { selectFoundContacts } from "../../redux/selectors";
 
 const Contacts = styled.ul`
     padding-left: 60px;
@@ -33,15 +34,13 @@ const DelBut = styled.button`
 `;
 
 export default () => {
-    const contacts = useSelector((state) => state.contacts.contactsList);
-    const filter = useSelector((state) => state.filter.status);
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(fetchContacts())
     }, []);
     return (
         <Contacts>
-            {(filter.trim().toLowerCase() !== '' ? contacts.filter(contact => contact.name.toLowerCase().includes(filter.trim().toLowerCase())) : contacts).map(contact => <Contact key={contact.id}>
+            {useSelector(selectFoundContacts).map(contact => <Contact key={contact.id}>
                 <ContactInfo>{contact.name}: {contact.number}</ContactInfo>
                 <DelBut onClick={(e) => dispatch(delContact(contact.id))}>Delete</DelBut>
             </Contact>)}
