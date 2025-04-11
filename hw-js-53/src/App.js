@@ -9,13 +9,14 @@ import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 const App = () => {
   return (
     <Routes>
-      <Route path="/" element={<Main />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/register" element={<Register />} />
+      <Route path="/js-hws/hw-js-53/build" element={<Main />} />
+      <Route path="/js-hws/hw-js-53/build/login" element={<Login />} />
+      <Route path="/js-hws/hw-js-53/build/register" element={<Register />} />
       <Route path="" element={<PrivateRoute />}>
-        <Route path="/contacts" element={<Contacts />} />
+        <Route path="/js-hws/hw-js-53/build/contacts" element={<Contacts />} />
       </Route>
-      <Route path="*" element={<Navigate to="/" />} />
+      <Route path="/" element={<Navigate to="/js-hws/hw-js-53/build" />} />
+      <Route path="*" element={<Navigate to="/js-hws/hw-js-53/build" />} />
     </Routes>
   );
 }
