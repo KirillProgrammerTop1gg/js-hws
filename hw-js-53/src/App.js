@@ -15,6 +15,7 @@ const App = () => {
       <Route path="" element={<PrivateRoute />}>
         <Route path="/contacts" element={<Contacts />} />
       </Route>
+      <Route path="*" element={<Navigate to="/" />} />
     </Routes>
   );
 }
