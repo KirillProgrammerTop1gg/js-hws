@@ -35,14 +35,15 @@ const DelBut = styled.button`
 
 export default () => {
     const dispatch = useDispatch();
+    const token = useSelector((state) => state.auth.token);
     useEffect(() => {
-        dispatch(fetchContacts())
+        dispatch(fetchContacts(token));
     }, []);
     return (
         <Contacts>
             {useSelector(selectFoundContacts).map(contact => <Contact key={contact.id}>
                 <ContactInfo>{contact.name}: {contact.number}</ContactInfo>
-                <DelBut onClick={(e) => dispatch(delContact(contact.id))}>Delete</DelBut>
+                <DelBut onClick={(e) => dispatch(delContact([token, contact.id]))}>Delete</DelBut>
             </Contact>)}
         </Contacts>
     );

@@ -27,8 +27,9 @@ const AddForm = styled.button`
 
 export default () => {
     const dispatch = useDispatch();
+    const token = useSelector((state) => state.auth.token);
     return (
-        <Form onSubmit={(e) => (e.preventDefault(), dispatch(addContact({name: e.target.name.value, number: e.target.number.value})))}>
+        <Form onSubmit={(e) => (e.preventDefault(), dispatch(addContact([token, {name: e.target.name.value, number: e.target.number.value}])))}>
             <Label>Name</Label>
             <Input
                 type="text"

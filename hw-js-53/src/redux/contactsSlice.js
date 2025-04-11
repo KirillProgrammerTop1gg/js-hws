@@ -13,7 +13,7 @@ const contactsSlice = createSlice({
             state.contactsList = payload;
         });
         builder.addCase(delContact.fulfilled, (state, { payload }) => {
-            state.contactsList = state.contactsList.filter(contact => contact.id !== payload)
+            state.contactsList = JSON.parse(JSON.stringify(state.contactsList)).filter(contact => contact.id !== payload)
         });
         builder.addCase(addContact.fulfilled, (state, { payload }) => {
             state.contactsList.push(payload)
