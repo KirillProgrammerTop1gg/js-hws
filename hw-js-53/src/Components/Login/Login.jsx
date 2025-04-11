@@ -78,7 +78,7 @@ export default () => {
   const [password, setPassword] = useState("");
 
   useEffect(() => {
-    if (token != '') navigate("/contacts", { replace: true });
+    if (token != '') navigate("/js-hws/hw-js-53/build/contacts", { replace: true });
   }, [token]);
 
   const submit = (e) => {
@@ -109,10 +109,10 @@ export default () => {
         </Form>
         <ExtraLinks>
           <div>
-            Немає аккаунту? <Link to="/register">Зареєструйтесь</Link>
+            Немає аккаунту? <Link to="/js-hws/hw-js-53/build/register">Зареєструйтесь</Link>
           </div>
           <div>
-            Повернутися <Link to="/">на головну сторінку</Link>
+            Повернутися <Link to="/js-hws/hw-js-53/build">на головну сторінку</Link>
           </div>
         </ExtraLinks>
       </FormWrapper>

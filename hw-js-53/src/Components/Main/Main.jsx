@@ -50,10 +50,10 @@ export default () => {
       <Title>Сайт де ви можете зберегти свої контакти</Title>
       <LinksContainer>
         <li>
-          <Link to="/login">Логін</Link>
+          <Link to="/js-hws/hw-js-53/build/login">Логін</Link>
         </li>
         <li>
-          <Link to="/register">Реєстрація</Link>
+          <Link to="/js-hws/hw-js-53/build/register">Реєстрація</Link>
         </li>
       </LinksContainer>
     </MainSection>
