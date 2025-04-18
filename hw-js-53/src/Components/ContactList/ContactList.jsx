@@ -1,50 +1,65 @@
+import React, { useEffect } from "react";
 import styled from "styled-components";
-import { useSelector, useDispatch } from 'react-redux';
-import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { fetchContacts, delContact } from "../../redux/contactsApi";
 import { selectFoundContacts } from "../../redux/selectors";
 
-const Contacts = styled.ul`
-    padding-left: 60px;
-    margin-top: 15px;
+const List = styled.ul`
+  list-style: none;
+  padding: 0;
+  margin: 24px 16px;
+  display: grid;
+  gap: 12px;
 `;
-const Contact = styled.li`
-    font-size: 20px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    &::before{
-        content: '';
-        display: block;
-        border-radius: 50%;
-        width: 10px;
-        height: 10px;
-        background-color: black;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+
+const Item = styled.li`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 `;
-const ContactInfo = styled.p``;
-const DelBut = styled.button`
-    font-size: 16px;
-    border-radius: 5px;
-    padding: 5px;
-    display: block;
+
+const Info = styled.span`
+  font-size: 1rem;
+  color: #333;
+`;
+
+const DeleteButton = styled.button`
+  padding: 6px 10px;
+  background-color: #e57373;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: #ef5350;
+  }
 `;
 
 export default () => {
-    const dispatch = useDispatch();
-    const token = useSelector((state) => state.auth.token);
-    useEffect(() => {
-        dispatch(fetchContacts(token));
-    }, []);
-    return (
-        <Contacts>
-            {useSelector(selectFoundContacts).map(contact => <Contact key={contact.id}>
-                <ContactInfo>{contact.name}: {contact.number}</ContactInfo>
-                <DelBut onClick={(e) => dispatch(delContact([token, contact.id]))}>Delete</DelBut>
-            </Contact>)}
-        </Contacts>
-    );
-}
+  const dispatch = useDispatch();
+  const token = useSelector((state) => state.auth.token);
+  const contacts = useSelector(selectFoundContacts);
+
+  useEffect(() => {
+    dispatch(fetchContacts(token));
+  }, [dispatch, token]);
+
+  return (
+    <List>
+      {contacts.map(({ id, name, number }) => (
+        <Item key={id}>
+          <Info>{name}: {number}</Info>
+          <DeleteButton onClick={() => dispatch(delContact([token, id]))}>
+            Delete
+          </DeleteButton>
+        </Item>
+      ))}
+    </List>
+  );
+};

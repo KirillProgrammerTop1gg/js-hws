@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { register } from "../../redux/authApi";
 import { useNavigate, useLocation, Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { fixError } from "../../redux/authSlice";
 
 const Container = styled.div`
   display: flex;
@@ -69,25 +70,38 @@ const ExtraLinks = styled.div`
   }
 `;
 
+const Msg = styled.div`
+  color: #e60b33;
+  font-weight: 500;
+  margin-bottom: 20px;
+  width: 220px;
+  font-size: 18px;
+  text-align: center;
+`;
+
 export default () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
   const token = useSelector((state) => state.auth.token);
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
+  const err = useSelector((state) => state.auth.err);
   useEffect(() => {
     if (token != '') navigate("/js-hws/hw-js-53/build/contacts", { replace: true });
-  }, [token]);
+    if (err) {
+      document.querySelector('#msg').innerHTML = `Помилка в реєстрації! Спробуйте збільшити пароль або такий користувач вже зареєстрован!`;
+      document.querySelector('#name').value = '';
+      document.querySelector('#password').value = '';
+      document.querySelector('#email').value = '';
+      dispatch(fixError());
+    }
+  }, [token,err]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(register({
-      "name": name,
-      "email": email,
-      "password": password
+      "name": document.querySelector('#name').value,
+      "email": document.querySelector('#email').value,
+      "password": document.querySelector('#password').value
     }));
   };
 
@@ -95,26 +109,24 @@ export default () => {
     <Container>
       <FormWrapper>
         <Title>Реєстрація</Title>
+        <Msg id="msg"></Msg>
         <Form onSubmit={handleSubmit}>
           <Input
             type="text"
             placeholder="Name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+            id="name"
             required
           />
           <Input
             type="email"
             placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            id="email"
             required
           />
           <Input
             type="password"
             placeholder="Пароль"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            id="password"
             required
           />
           <Button type="submit">Зареєструватися</Button>

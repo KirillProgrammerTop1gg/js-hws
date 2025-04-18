@@ -23,9 +23,13 @@ export const delContact = createAsyncThunk('contacts/delContact', async (_, thun
 
 export const addContact = createAsyncThunk('contacts/addContact', async (_, thunkAPI) => {
     try {
-        await axios.post(`/contacts`, _[1], {headers: {"Authorization": `Bearer ${_[0]}`}});
-        const response = await axios.get('/contacts', { headers: { "Authorization": `Bearer ${_[0]}` } });
-        return response.data.at(-1);
+        // if (_[2].filter(oldContact => oldContact.name.toLowerCase() === _[1].name.toLowerCase()).length){
+        //     return thunkAPI.rejectWithValue('')
+        // } else {
+            await axios.post(`/contacts`, _[1], {headers: {"Authorization": `Bearer ${_[0]}`}});
+            const response = await axios.get('/contacts', { headers: { "Authorization": `Bearer ${_[0]}` } });
+            return response.data.at(-1);
+        // }
     } catch (e) {
         return thunkAPI.rejectWithValue(e.message)
     }

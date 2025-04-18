@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { login } from "../../redux/authApi";
 import { useNavigate, useLocation, Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { fixError } from "../../redux/authSlice";
 
 const Container = styled.div`
   display: flex;
@@ -69,40 +70,52 @@ const ExtraLinks = styled.div`
   }
 `;
 
+const Msg = styled.div`
+  color: #e60b33;
+  font-weight: 500;
+  margin-bottom: 20px;
+  width: 220px;
+  font-size: 18px;
+  text-align: center;
+`;
+
 export default () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
   const token = useSelector((state) => state.auth.token);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
+  const err = useSelector((state) => state.auth.err);
   useEffect(() => {
     if (token != '') navigate("/js-hws/hw-js-53/build/contacts", { replace: true });
-  }, [token]);
+    if (err) {
+      document.querySelector('#msg').innerHTML = `Помилка в логіні! Спробуйте ще раз або ви ще не зареєстровані!`;
+      document.querySelector('#email').value = '';
+      document.querySelector('#password').value = '';
+      dispatch(fixError());
+    }
+  }, [token,err]);
 
   const submit = (e) => {
     e.preventDefault();
-    dispatch(login({ email, password }));
+    dispatch(login({ email: document.querySelector('#email').value, password: document.querySelector('#password').value }));
   };
 
   return (
     <Container>
       <FormWrapper>
         <Title>Вход</Title>
+        <Msg id="msg"></Msg>
         <Form onSubmit={submit}>
           <Input
             type="email"
             placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            id="email"
             required
           />
           <Input
             type="password"
             placeholder="Пароль"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            id="password"
             required
           />
           <Button type="submit">Логін</Button>

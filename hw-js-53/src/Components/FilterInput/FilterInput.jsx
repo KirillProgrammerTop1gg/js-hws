@@ -1,29 +1,47 @@
+import React from "react";
 import styled from "styled-components";
 import { useSelector, useDispatch } from "react-redux";
 import { setFilter } from "../../redux/filterSlice";
 import { selectFilter } from "../../redux/selectors";
 
-const Label = styled.h3`
-    font-weight: 400;
-    margin-top: 15px;
-    font-size: 22px;
-`;
-const Input = styled.input`
-    margin-top: 5px;
-    border-radius: 5px;
-    padding: 5px;
+const Container = styled.div`
+  margin: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 `;
 
-export default () => 
-{
-    const dispatch = useDispatch();
-    const filter = useSelector(selectFilter);
-    return (
-        <>
-            <Label>
-                Find contacts by name
-            </Label>
-            <Input type="text" value={filter !== '' ? filter : ''} onInput={(e) => dispatch(setFilter(e.target.value))}/>
-        </>
-    );
-}
+const Label = styled.label`
+  font-size: 1rem;
+  color: #555;
+`;
+
+const Input = styled.input`
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+
+  &:focus {
+    border-color: #4caf50;
+    outline: none;
+  }
+`;
+
+export default () => {
+  const dispatch = useDispatch();
+  const filter = useSelector(selectFilter);
+
+  return (
+    <Container>
+      <Label htmlFor="filter">Find contacts by name</Label>
+      <Input
+        id="filter"
+        type="text"
+        value={filter}
+        onChange={(e) => dispatch(setFilter(e.target.value))}
+      />
+    </Container>
+  );
+};
